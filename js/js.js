@@ -84,7 +84,24 @@ function userPlay(suiteUsers,suiteSimons){
     $( ".color" ).click(function() {
         var color = $(this).parent().data("color");
         suiteUsers.push(color);
-        $('#sound'+color).get(0).play();
+        switch(color){
+            case 0:
+                blink(BLUE,500);
+                SOUNDBLUE.get(0).play();
+                break;
+            case 1:
+                blink(YELLOW,500);
+                SOUNDYELLOW.get(0).play();
+                break;
+            case 2:
+                blink(RED,500);
+                SOUNDRED.get(0).play();
+                break;
+            case 3:
+                blink(GREEN,500);
+                SOUNDGREEN.get(0).play();
+                break;
+        }
         check(suiteSimons,suiteUsers);
      });  
 }
