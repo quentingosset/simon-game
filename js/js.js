@@ -11,33 +11,26 @@ let level = 0;
 let color = 1; 
 
 $('.start').click(function(){
-   // blink(BLUE,500);
     let suiteSimons = [];
     let suiteUsers = [];
     let i = 0;
-    // simon play and make a suite for the user
-    //simonPlay(level,color,suiteSimons);
-    // user need find this serie, if find the good serie, add level and +1 in color, if lose , restart.
-    //userPlay(suiteSimons);
     initGame(level,color,suiteSimons);
 });
 function check(suiteSimons,suiteUsers){
-    console.log("SUITEUSER : "+suiteUsers + " |  SUITESIMON " +(suiteSimons))
+    addLog("SUITEUSER : "+suiteUsers + " |  SUITESIMON " +(suiteSimons))
     if(suiteUsers[suiteUsers.length-1] === suiteSimons[suiteUsers.length-1]){
        addLog("GOOD COLOR");
         if(suiteUsers.length === suiteSimons.length){
-            clearLog();
+            addLog("NEXT LEVEL | PRESS START");
             $("#game_information").text("NEXT LEVEL | PRESS START")
             level += 1;
             color += 1;
             $('.color').off('click');
         }
-        //si j'ai tout correct je relaance initalize
     }else{
-        //je doit quitter 
-        clearLog();
         SOUNDERROR.get(0).play();
         $("#game_information").text("LOSER | LEVEL "+level+" | COLOR "+color);
+        addLog("LOSER | LEVEL "+level+" | COLOR "+color);
         level = 0;
         color = 1;
          $('.color').off('click');
@@ -47,9 +40,6 @@ function initGame(level,color){
     let suiteSimons = [];
     let suiteUsers = [];
     simonPlay(level,color,suiteSimons);
-    //console.log(test());
-    //checkcolor(console.log(data));
-    //console.log(checkcolor(function(callback){return callback;}));
     setTimeout(function(){ userPlay(suiteUsers,suiteSimons); },1000*suiteSimons.length);
 }
 function simonPlay(level,color,suiteSimons){
@@ -79,6 +69,7 @@ function simonPlay(level,color,suiteSimons){
             }, 1000*i);
          })(i);
     }
+    addLog("SUITESIMON : "+suiteSimons);
 }
 function userPlay(suiteUsers,suiteSimons){ 
     $( ".color" ).click(function() {
@@ -111,7 +102,6 @@ function clearLog(){
 function blink(element,timing){
         $(element).fadeOut(timing),
         $(element).fadeIn(timing);
-        //addLog(element.data("color"));
 } 
 function addLog(text){
     if($('textarea').val().length <= 0 ){
