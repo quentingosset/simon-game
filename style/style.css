@@ -1,0 +1,46 @@
+h2,h3{
+        font-family: 'VT323', monospace;
+}
+.simon-no-buttons{
+        width: 500px;
+        float: left
+}
+.simon-no-buttons img {
+    height: 500px;
+}
+.button-blue img {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 47px;
+    left: 50px;
+}
+.button-yellow img {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 47px;
+    left: 290px;
+}
+.button-red img {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 290px;
+    left: 50px;
+}
+.button-green img {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 290px;
+    left: 290px;
+}
+.button {
+    display: inline;
+}
+#debug{
+    float: left;
+    width: calc(100% - 500px);
+    text-align: center;
+}

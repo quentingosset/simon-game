@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIMONS Le jeu !</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+</head>
+<body>
+    <audio id="sound0" src="sound/simonSound1.mp3"></audio>
+    <audio id="sound1" src="sound/simonSound2.mp3"></audio>
+    <audio id="sound2" src="sound/simonSound3.mp3"></audio>
+    <audio id="sound3" src="sound/simonSound4.mp3"></audio>
+    <audio id="sound4" src="sound/simonError.mp3"></audio>
+    <div class="simon-no-buttons">
+        <img src="img/simon-no-buttons.png">
+</div>
+    <div>
+        <div class="button button-blue" data-color="0">
+            <img class="color" src="img/button-blue.png">
+        </div>
+        <div class="button button-yellow" data-color="1">
+            <img class="color" src="img/button-yellow.png">
+        </div>
+        <div class="button button-red" data-color="2">
+            <img class="color" src="img/button-red.png">
+        </div>
+        <div class="button button-green" data-color="3">
+            <img class="color" src="img/button-green.png">
+        </div>
+</div>
+    <div id="debug">
+        <h2>DEBUG CONSOLE <button id="button_debug" onclick="debug()" data-value="0">SHOW DEBUG</button></h2>
+        <h3>INFORMATION : <span id="game_information"></span></h3>
+        <textarea style="width: 50%;height: 500px" hidden></textarea>
+        <div id="option">
+            <button class="start">START</button>
+            <button class="clear_log" onclick="clearLog()">CLEAR LOG</button>
+        </div>
+    </div>
+</body>
+<script src="js/js.js"></script>
+</html>
