@@ -24,10 +24,10 @@ $('.start').click(function(){
 function check(suiteSimons,suiteUsers){
     console.log("SUITEUSER : "+suiteUsers + " |  SUITESIMON " +(suiteSimons))
     if(suiteUsers[suiteUsers.length-1] === suiteSimons[suiteUsers.length-1]){
-       addLog("couleur correct");
+       addLog("GOOD COLOR");
         if(suiteUsers.length === suiteSimons.length){
             clearLog();
-            $("#game_information").text("LEVEL SUIVANT | PRESS START")
+            $("#game_information").text("NEXT LEVEL | PRESS START")
             level += 1;
             color += 1;
             $('.color').off('click');
