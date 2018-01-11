@@ -121,16 +121,15 @@ function addLog(text){
     }
 }
 
-function debug(){
-    console.log($('#button_debug').data('value'));
-    if($('#button_debug').data('value') === 0){
-        $('#button_debug').attr("data-value","1");
-        $('textarea').show();
-        $('#button_debug').text("HIDE DEBUG");
-    }
-    if($('#button_debug').data('value') === 1){
-        $('#button_debug').attr("data-value","0");
-        $('textarea').hide();
-        $('#button_debug').text("SHOW DEBUG");
-    }
+function debug_show(){
+    $('#button_debug').attr("onclick","debug_hide()");
+    $('textarea').show();
+    $('#button_debug').text("HIDE DEBUG");
 }
+
+function debug_hide(){
+    $('#button_debug').attr("onclick","debug_show()");
+    $('textarea').hide();
+    $('#button_debug').text("SHOW DEBUG");
+}
+
